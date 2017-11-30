@@ -11,6 +11,8 @@ app.use(expressValidator())
 
 
 consign()
+    .then('app/controllers')
+    .then('app/models')
     .include('app/routes')
     .into(app)
 

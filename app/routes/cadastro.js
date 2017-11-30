@@ -1,5 +1,5 @@
 module.exports = function(app){
     app.get('/cadastro', function(req,res){
-        res.render('usrq/cadastro')
+        app.app.controllers.cadastro.cadastro(app, req, res)
     })
 }

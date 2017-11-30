@@ -1,5 +1,5 @@
 module.exports = function(app){
     app.get('/login', function(req,res){
-        res.render('usrq/login')
+        app.app.controllers.login.login(app, req, res)
     })
 }
