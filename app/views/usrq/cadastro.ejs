@@ -2,11 +2,40 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8"/>
-        <title>USer Cadastro</title>
+        <title>cadastro</title>
     </head>
 <body>
 
-    <h1>Cadastro</h1>
+    <h1>cadastro</h1>
+    <br />
+
+    <form action="/cadastrar" method="post">
+        <label>Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="ex: fulano de sicrano junior " />
+        <br />
+
+        <label>Matricula</label>
+        <input type="text" id="matricula" name="matricula" placeholder="ex: 201601****   " />
+        <br />
+
+        <label>Email</label>
+        <input type="text" id="email" name="email" placeholder="ex: fulano@gmail.com " />
+        <br />
+
+        <label>Data de Nascimento</label>
+        <input type="text" id="date" name="date" placeholder="ex: 18/08/2000 " />
+        <br />
+
+        <label>Contato</label>
+        <input type="text" id="contato" name="contato" placeholder="ex: 84 988050101 " />
+        <br />
+
+        <label>Projeto</label>
+        <input type="text" id="projeto" name="projeto" placeholder="ex: impressora 3D " />
+        <br />
+        
+        <input type="submit" value="Enviar" />
+    </form>
 
 </body>
 </html>
