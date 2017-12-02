@@ -1,8 +1,9 @@
 module.exports.cadastro = function(app, req, res){
-    res.render('usrq/cadastro');
+    res.render('usrq/cadastro', {validacao: {},dadosForm: {}});
 }
 
 module.exports.cadastrar = function(app, req, res){
+
     var dadosForm = req.body;
 
     req.assert('nome','nome Nao pode ser vazio').notEmpty();
@@ -16,7 +17,7 @@ module.exports.cadastrar = function(app, req, res){
     var erros = req.validationErrors();
 
     if(erros){
-        res.send('Existe erros no formulario de cadastro')
+        res.render('usrq/cadastro',{validacao: erros, dadosForm: dadosForm})
         return;
     }
     res.send('possivel cadastrar')

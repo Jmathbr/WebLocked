@@ -9,29 +9,41 @@
     <h1>cadastro</h1>
     <br />
 
-    <form action="/cadastrar" method="post">
+    <% if(validacao.length > 0){ %>
+        <div class='alert alert-danger'>
+            <strong>Atençao!</strong>
+            <ul>
+                <% for (var i = 0; i < validacao.length; i++){ %>
+                    <li><%=validacao[i].msg%></li>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+
+
+        <form action="/cadastrar" method="post">
         <label>Nome Completo</label>
-        <input type="text" id="nome" name="nome" placeholder="ex: fulano de sicrano junior " />
+        <input type="text" value="<%=dadosForm.nome%>" id="nome" name="nome" placeholder="ex: fulano de sicrano junior " />
         <br />
 
         <label>Matricula</label>
-        <input type="text" id="matricula" name="matricula" placeholder="ex: 201601****   " />
+        <input type="text" value="<%=dadosForm.matricula%>" id="matricula" name="matricula" placeholder="ex: 201601****   " />
         <br />
 
         <label>Email</label>
-        <input type="text" id="email" name="email" placeholder="ex: fulano@gmail.com " />
+        <input type="text" value="<%=dadosForm.email%>" id="email" name="email" placeholder="ex: fulano@gmail.com " />
         <br />
 
         <label>Data de Nascimento</label>
-        <input type="text" id="date" name="date" placeholder="ex: 18/08/2000 " />
+        <input type="text" value="<%=dadosForm.date%>" id="date" name="date" placeholder="ex: 18/08/2000 " />
         <br />
 
         <label>Contato</label>
-        <input type="text" id="contato" name="contato" placeholder="ex: 84 988050101 " />
+        <input type="text" value="<%=dadosForm.contato%>" id="contato" name="contato" placeholder="ex: 84 988050101 " />
         <br />
 
         <label>Projeto</label>
-        <input type="text" id="projeto" name="projeto" placeholder="ex: impressora 3D " />
+        <input type="text" value="<%=dadosForm.projeto%>" id="projeto" name="projeto" placeholder="ex: impressora 3D " />
         <br />
         
         <input type="submit" value="Enviar" />
