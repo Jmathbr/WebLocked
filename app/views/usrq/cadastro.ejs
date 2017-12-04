@@ -2,11 +2,11 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8"/>
-        <title>cadastro</title>
+        <title>Cadastro</title>
     </head>
 <body>
 
-    <h1>cadastro</h1>
+    <h1>Cadastro:</h1>
     <br />
 
     <% if(validacao.length > 0){ %>
@@ -20,30 +20,34 @@
         </div>
     <% } %>
 
-
         <form action="/cadastrar" method="post">
-        <label>Nome Completo</label>
-        <input type="text" value="<%=dadosForm.nome%>" id="nome" name="nome" placeholder="ex: fulano de sicrano junior " />
+        <h2>Conta:</h2>
+        <label>Email:</label>
+        <input type="email" value="<%=dadosForm.email%>" id="email" name="email" placeholder="ex: ian@gmail.com " />
         <br />
 
-        <label>Matricula</label>
-        <input type="text" value="<%=dadosForm.matricula%>" id="matricula" name="matricula" placeholder="ex: 201601****   " />
+        <label>Senha:</label>
+        <input type="password" value="<%=dadosForm.senha%>" id="senha" name="senha" placeholder="Ex: asdfgh123 " />
+        <br />
+        <label>Repita a senha:</label>
+        <input type="password" value="<%=dadosForm.rsenha%>" id="rsenha" name="rsenha" placeholder="Ex: asdfgh123 " />
+        <br />
+        
+        <h2>Dados Pessoais:</h2>
+        <label>Nome Completo:</label>
+        <input type="text" value="<%=dadosForm.nome%>" id="nome" name="nome" placeholder="ex: Ian Nascimento da Silva " />
         <br />
 
-        <label>Email</label>
-        <input type="text" value="<%=dadosForm.email%>" id="email" name="email" placeholder="ex: fulano@gmail.com " />
+        <label>Matricula:</label>
+        <input type="number" value="<%=dadosForm.matricula%>" id="matricula" name="matricula" placeholder="ex: 2016****123" />
         <br />
 
-        <label>Data de Nascimento</label>
-        <input type="text" value="<%=dadosForm.date%>" id="date" name="date" placeholder="ex: 18/08/2000 " />
+        <label>Data de Nascimento:</label>
+        <input type="date" value="<%=dadosForm.date%>" id="date" name="date" placeholder="ex: 00/01/2001 " />
         <br />
 
         <label>Contato</label>
-        <input type="text" value="<%=dadosForm.contato%>" id="contato" name="contato" placeholder="ex: 84 988050101 " />
-        <br />
-
-        <label>Projeto</label>
-        <input type="text" value="<%=dadosForm.projeto%>" id="projeto" name="projeto" placeholder="ex: impressora 3D " />
+        <input type="number" value="<%=dadosForm.contato%>" id="contato" name="contato" placeholder="ex: 84 9******** " />
         <br />
         
         <input type="submit" value="Enviar" />
