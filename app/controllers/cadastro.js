@@ -12,7 +12,7 @@ module.exports.cadastrar = function(app, req, res){
     req.assert('date','data de nascimento nao pode ser vazio').notEmpty();
     req.assert('contato','Contato nao pode ser vazio').notEmpty();
     req.assert('senha','Senha nao pode ser vazio').notEmpty();
-    req.assert('rsenha','Repita a senha por favor').notEmpty()
+    req.assert('senha','As senhas nao sao iguais').equals(dadosForm.rsenha);
 
     var erros = req.validationErrors();
 
@@ -20,5 +20,11 @@ module.exports.cadastrar = function(app, req, res){
         res.render('usrq/cadastro',{validacao: erros, dadosForm: dadosForm})
         return;
     }
+    dadosForm.classe = 'C';
+    var connection = app.config.dbConnection;
+    var UsuariosDAO = new app.app.models.UsuariosDAO(connection);
+
+    UsuariosDAO.inserirUsuario(dadosForm)
+
     res.send('possivel cadastrar')
 }
