@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Menu Administrador</title>
+        <script>
+            $(document).ready(function(){
+                $('#btn_sair').click(function(){
+                    window.location.href = '/sair'
+                });
+                // funcao nao esta funcionando
+            });
+
+
+        </script>
+    </head>
+<body>
+
+    <h1>Menu ADM</h1>
+    <form action="/sair" method="get"></form>
+    <button type="submit" class ="btn btn-info pull-right" id="btn_sair" >SAIR</button>
+</body>
+</html>
