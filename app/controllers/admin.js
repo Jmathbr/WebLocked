@@ -9,6 +9,6 @@ module.exports.admin = function(app, req, res){
 }
 module.exports.sair = function(app, req, res){
     req.session.destroy(function(err){
-        res.send('controller sair')
+        res.render('home/index',{validacao:{}})
     })
 }
