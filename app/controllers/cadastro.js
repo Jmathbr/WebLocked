@@ -26,5 +26,5 @@ module.exports.cadastrar = function(app, req, res){
 
     UsuariosDAO.inserirUsuario(dadosForm)
 
-    res.send(' precisa ser redirecionado para que nao haja um reenvio de form apertando f5 home/index')
+    res.redirect("/")
 }

@@ -22,7 +22,7 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
                 }
                 if(req.session.autorizado == true){
                     //nao consegue encontrar tinha que ser redirect
-                    res.render('admin')
+                    res.redirect('/admin')
                 }
                 else{
                     res.render('home/index',{validacao:{}})

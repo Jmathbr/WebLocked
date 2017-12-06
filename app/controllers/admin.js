@@ -1,6 +1,6 @@
 module.exports.admin = function(app, req, res){
     if(req.session.autorizado == true){
-        res.render('/admin')
+        res.render('admin')
     }
     else{
         res.send("precisa de autenticaçao")
@@ -9,6 +9,6 @@ module.exports.admin = function(app, req, res){
 }
 module.exports.sair = function(app, req, res){
     req.session.destroy(function(err){
-        res.render("home/index",{validacao: {}})
+        res.send('controller sair')
     })
 }
