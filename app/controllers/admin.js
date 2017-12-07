@@ -1,12 +1,26 @@
 module.exports.admin = function(app, req, res){
     if(req.session.autorizado == true){
-        res.render('admin')
+        if(req.session.classe == 'SU'){
+            res.render('admin')
+        }
+        else{
+            res.render('user')
+        }
     }
     else{
-        res.send("precisa de autenticaçao")
+        res.render("home/index",{validacao:{}})
     }
-
 }
+
+module.exports.user = function(app, req, res){
+    if((req.session.autorizado == true)&&(req.session.classe != 'SU')){
+        res.render('user')
+    }
+    else{
+        res.render("home/index",{validacao:{}})
+    }
+}
+
 module.exports.sair = function(app, req, res){
     req.session.destroy(function(err){
         res.render('home/index',{validacao:{}})
