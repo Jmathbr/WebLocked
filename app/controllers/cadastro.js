@@ -20,7 +20,8 @@ module.exports.cadastrar = function(app, req, res){
         res.render('usrq/cadastro',{validacao: erros, dadosForm: dadosForm})
         return;
     }
-    dadosForm.classe = 'C';
+    dadosForm.classe = '';
+    dadosForme.last = '';
     var connection = app.config.dbConnection;
     var UsuariosDAO = new app.app.models.UsuariosDAO(connection);
 
