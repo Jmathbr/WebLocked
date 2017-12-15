@@ -21,8 +21,12 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
                     req.session.classe = result[0].classe; 
                 }
                 if(req.session.autorizado == true){
-                    //nao consegue encontrar tinha que ser redirect
-                    res.redirect('/admin')
+                    if(req.session.classe == 'SU'){
+                        res.redirect('/admin')
+                    }
+                    else{
+                        res.redirect('/user')
+                    }
                 }
                 else{
                     res.render('home/index',{validacao:{}})

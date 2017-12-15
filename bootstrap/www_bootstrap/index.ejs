@@ -3,19 +3,11 @@
     <head>
         <meta charset="utf-8"/>
         <title>home</title>
+ 	<link rel= "stylesheet" href= "css/bootstrap.min.css" > 
+        
     </head>
 <body>
-        <% if(validacao.length > 0){ %>
-            <div class='alert alert-danger'>
-                <strong>Atençao!</strong>
-                <ul>
-                    <% for (var i = 0; i < validacao.length; i++){ %>
-                        <li><%=validacao[i].msg%></li>
-                    <% } %>
-                </ul>
-            </div>
-        <% } %>
-
+      
     <h1>Login</h1>
     <form action="/autenticar" method="post">
         <h2>Conta:</h2>
@@ -27,5 +19,7 @@
         <input type="password" id="senha" name="senha" placeholder="Ex: asdfgh123 " />
         <br />
         <input type="submit" value="Enviar" />
+	
+         <script src= "js/bootstrap.js" ></script>
 </body>
 </html>

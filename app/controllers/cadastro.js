@@ -21,7 +21,7 @@ module.exports.cadastrar = function(app, req, res){
         return;
     }
     dadosForm.classe = '';
-    dadosForme.last = '';
+    dadosForm.last = '';
     var connection = app.config.dbConnection;
     var UsuariosDAO = new app.app.models.UsuariosDAO(connection);
 
