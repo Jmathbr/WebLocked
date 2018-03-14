@@ -6,10 +6,11 @@ module.exports.cadastrar = function(app, req, res){
 
     var dadosForm = req.body;
 
-    req.assert('nome','Nome nao pode ser vazio').notEmpty();
-    req.assert('email','Email nao pode ser vazio').isEmail();
-    req.assert('matricula','Idade nao pode ser vazio').isNumeric();
-    req.assert('senha','As senhas nao sao iguais, ou os diretorios estao vazios').equals(dadosForm.rsenha);
+    req.assert('nome',' Nome nao pode ser vazio').notEmpty();
+    req.assert('email',' Email nao pode ser vazio, ou formato de email nao aceito').isEmail();
+    req.assert('matricula',' Matricula nao pode ser vazio').isNumeric();
+    req.assert('senha',' Senha nao pode ser vazio').notEmpty();
+    req.assert('senha',' As senhas nao sao iguais').equals(dadosForm.rsenha);
 
     var erros = req.validationErrors();
 
